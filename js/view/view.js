@@ -7,11 +7,20 @@ window.LoginView = Backbone.View.extend({
 		"click #login_button" : "login_submit"
 	},
 	login_submit: function(){
-
-		user = this.$('#username').val();
+		data = this.collection;
+		username = this.$('#username').val();
 		pwd = this.$('#password').val();
-		alert("You logged in as " + user + " and a password of " + pwd);
-		return false;
+		data.each(function(iModel, index, list) {
+			users  = iModel.toJSON().Users			
+	    	jQuery.each(users, function(i, user) {
+	    		if(username == user.name && pwd == user.password)
+					{
+						alert("You logged in as " + username + " and a password is " + pwd);
+						alert("Login successful");
+					}
+					 });
+	    	});
+	return false;
 	},
 	render : function() {
 		imagesdiv = "";
@@ -22,4 +31,11 @@ window.LoginView = Backbone.View.extend({
 		});
 		$(this.el).html(imagesdiv);
 }
+});
+
+window.UserListView = Backbone.View.extend({
+	initialize : function() {
+		var self = this;
+		console.log('Initializing User View');
+	}
 });

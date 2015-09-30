@@ -9,6 +9,7 @@ Router = Backbone.Router.extend({
 		},
 	login : function() {
 		userlist = new userDetails();
+
 		userlist.fetch({
 			success : function(model,response){
 				console.log("hello got it congrats")
@@ -20,7 +21,6 @@ Router = Backbone.Router.extend({
 					this.loginview.render();
 				} else {
 					this.loginview.delegateEvents();
-					// delegate events when the view is recycled
 				}
 			}
 		})
