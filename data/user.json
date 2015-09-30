@@ -1,0 +1,28 @@
+{
+    "Users": [
+        {
+            "userid": "1",
+            "name": "Ajay",
+            "designation": "Vice President",
+            "department": "Software Engineering",
+            "profilepic": "http://i.imgur.com/lPBJXJl.png",
+            "password": "xyz"
+        },
+        {
+            "userid": "2",
+            "name": "Vijay",
+            "designation": "Sr. Manager",
+            "department": "Quality Analysis",
+            "profilepic": "http://www.ucar.edu/communications/staffnotes/0602/images/piper.jpg",
+            "password": "xyz"
+        },
+        {
+            "userid": "3",
+            "name": "Sanjay",
+            "designation": "Manager",
+            "department": "Product Planning",
+            "profilepic": "http://www.ucar.edu/communications/staffnotes/0304/seth.gif",
+            "password": "xyz"
+        }
+    ]
+}
