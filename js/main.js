@@ -7,7 +7,7 @@ Router = Backbone.Router.extend({
 	},
 	initialize : function() {
 		},
-		login : function() {
+	login : function() {
 		userlist = new userDetails();
 		userlist.fetch({
 			success : function(model,response){
@@ -24,8 +24,6 @@ Router = Backbone.Router.extend({
 				}
 			}
 		})
-
-
 		}
 	});
 

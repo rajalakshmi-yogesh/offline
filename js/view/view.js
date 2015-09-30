@@ -6,11 +6,11 @@ window.LoginView = Backbone.View.extend({
 
 	events: {
 		"click #login_button" : "login_submit"
-	}
+	},
 	login_submit: function(){
 		console.log("login submitted");
 		alert("submitted");
-	}
+	},
 	render : function() {
 		imagesdiv = "";
 		data = this.collection;
