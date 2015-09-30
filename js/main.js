@@ -3,6 +3,7 @@
 Router = Backbone.Router.extend({
 	routes : {
 		"" : "login",
+		"userslist" : "userslist"
 		
 	},
 	initialize : function() {
@@ -24,10 +25,28 @@ Router = Backbone.Router.extend({
 				}
 			}
 		})
+		},
+		userslist : function(){
+userdetails = new userDetails();
+		userlist.fetch({
+		success : function(model,response){
+				console.log(" Display User List")
+				if (!this.userlistview) {
+					this.userlistview = new UserListView({
+						el : $("#user_list"),
+						collection : userdetails
+					});
+					this.userlistview.render();
+				} else {
+					this.userlistview.delegateEvents();
+				}
+			}
+		})
+
 		}
 	});
 
-templateLoader.load(["LoginView"], function() {
+templateLoader.load(["LoginView","UserListView"], function() {
 	app = new Router();
 	Backbone.history.start();
 });
