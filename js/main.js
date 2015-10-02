@@ -13,7 +13,6 @@ Router = Backbone.Router.extend({
 
 		userlist.fetch({
 			success : function(model,response){
-				console.log("hello got it congrats")
 				if (!this.loginview) {
 					this.loginview = new LoginView({
 						el : $("#login_form"),
@@ -27,14 +26,14 @@ Router = Backbone.Router.extend({
 		})
 		},
 		userslist : function(){
-userdetails = new userDetails();
-		userlist.fetch({
-		success : function(model,response){
-				console.log(" Display User List")
-				if (!this.userlistview) {
+			userdetails = new userDetails();
+			userdetails.fetch({
+			success : function(model,response){
+					if (!this.userlistview) {
 					this.userlistview = new UserListView({
 						el : $("#user_list"),
 						collection : userdetails
+						
 					});
 					this.userlistview.render();
 				} else {

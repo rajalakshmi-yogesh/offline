@@ -1,8 +1,7 @@
 window.LoginView = Backbone.View.extend({
 	initialize : function() {
 		var self = this;
-		console.log('Initializing Login View');
-	},
+		},
 	events: {
 		"click #login_button" : "login_submit"
 	},
@@ -41,19 +40,14 @@ window.UserListView = Backbone.View.extend({
 		
 	},
 	render : function(){
-		console.log(this);
-		
+		$("#login_form").hide();
 		imagesdiv = "";
 		data = this.collection;
 		currTemplate = this.template;
-		alert("List of Users");
-		console.log(currTemplate);
-		 data.each(function(iModel, index, list) {
-		 users  = iModel.toJSON().Users
-		 console.log(users);
-		// console.log(currTemplate);
-		//  imagesdiv = imagesdiv + currTemplate(iModel.toJSON());
-		 });
-		// $(this.el).html(imagesdiv);
+		data.each(function(iModel, index, list) {
+		imagesdiv = imagesdiv + currTemplate(iModel.toJSON());
+		});
+		$(this.el).html(imagesdiv);
 	}
+		
 });
