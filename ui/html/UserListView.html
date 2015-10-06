@@ -18,15 +18,17 @@
           <td><%= Users[i].designation %></td>
           <td><%= Users[i].department %></td>
           <td><%= Users[i].profilepic %></td>
-          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal_<%= i %>" >Add</button></td>
+          
           <td><button id="delete_<%=i%>" type="button" class=" add btn btn-danger" >Delete</button></td>
         </tr>
         <% } %>
       </tbody>
 </table>
-<div> <button id="events-list" class="btn btn btn-link" type="submit">Events</button> </div>
-<% for (var i = 0, l = Users.length; i < l; i++) {%>
-<div id="myModal_<%= i %>" class="modal fade" role="dialog">
+
+<div class="container"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_users" >Add Users</button>
+ <button id="events-list" class="btn btn btn-link" type="submit">Events</button> </div>
+
+<div id="add_users" class="modal fade" role="dialog">
   <div class="modal-dialog">
   <!-- Modal content-->
     <div class="modal-content">
@@ -62,5 +64,5 @@
     </div>
   </div>
 </div>
-    <% } %>
+
     

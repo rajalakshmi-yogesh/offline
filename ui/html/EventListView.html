@@ -20,21 +20,22 @@
           <td><%= Events[i].startDate %></td>
           <td><%= Events[i].location.type  %><%= Events[i].location.name %><%=  Events[i].location.address %></td>
           <td><%= Events[i].offers.type %> <%= Events[i].offers.url %></td>
-          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEvent_<%= i %>" >Add</button></td>
+          
           <td><button id="delete_<%=i%>" type="button" class=" add btn btn-danger" >Delete</button></td>
         </tr>
         <% } %>
       </tbody>
 </table>
 
-<% for (var i = 0, l = Events.length; i < l; i++) {%>
-<div id="addEvent_<%= i %>" class="modal fade" role="dialog">
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEvent" >Add Event</button>
+
+<div id="addEvent" class="modal fade" role="dialog">
   <div class="modal-dialog">
   <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
       <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Add User</h4>
+          <h4 class="modal-title"> Event </h4>
       </div>
       <div class="modal-body">
   <form>
@@ -85,5 +86,6 @@
     </div>
   </div>
 </div>
+<% for (var i = 0, l = Events.length; i < l; i++) {%>
     <% } %>
     
