@@ -1,16 +1,13 @@
-
-
 Router = Backbone.Router.extend({
 	routes : {
 		"" : "login",
-		"userslist" : "userslist"
-		
-	},
+		"userslist" : "userslist",
+		"event" : "event"
+		},
 	initialize : function() {
 		},
 	login : function() {
 		userlist = new userDetails();
-
 		userlist.fetch({
 			success : function(model,response){
 				if (!this.loginview) {
@@ -41,11 +38,27 @@ Router = Backbone.Router.extend({
 				}
 			}
 		})
-
+		},
+		event : function(){  
+			eventdetails = new eventsList();
+			eventdetails.fetch({
+			success : function(model,response){
+					if (!this.eventlistview) {
+					this.eventlistview = new EventListView({
+						el : $("#events_list_page"),
+						collection : eventdetails
+						
+					});
+					this.eventlistview.render();
+				} else {
+					this.eventlistview.delegateEvents();
+				}
+			}
+		})	
 		}
 	});
 
-templateLoader.load(["LoginView","UserListView"], function() {
+templateLoader.load(["LoginView","UserListView","EventListView"], function() {
 	app = new Router();
 	Backbone.history.start();
 });

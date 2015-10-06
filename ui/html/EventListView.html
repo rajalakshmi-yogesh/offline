@@ -1,0 +1,89 @@
+<h2 class="sub-header">Event List</h2>
+  <div class="table-responsive">
+  <table class="table table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Type</th>
+      <th>Name</th>
+      <th>Start Date</th>
+      <th>Location</th>
+      <th>Offers</th>
+    </tr>
+    </thead>
+      <tbody>
+        <% for (var i = 0, l = Events.length; i < l; i++) {%>
+        <tr>
+          <td><%= i+1 %></td>
+          <td><%= Events[i].type %></td>
+          <td><%= Events[i].name %></td>
+          <td><%= Events[i].startDate %></td>
+          <td><%= Events[i].location.type  %><%= Events[i].location.name %><%=  Events[i].location.address %></td>
+          <td><%= Events[i].offers.type %> <%= Events[i].offers.url %></td>
+          <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEvent_<%= i %>" >Add</button></td>
+          <td><button id="delete_<%=i%>" type="button" class=" add btn btn-danger" >Delete</button></td>
+        </tr>
+        <% } %>
+      </tbody>
+</table>
+
+<% for (var i = 0, l = Events.length; i < l; i++) {%>
+<div id="addEvent_<%= i %>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+  <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Add User</h4>
+      </div>
+      <div class="modal-body">
+  <form>
+    <div class="form-group">
+        <label for="event_type">Type</label>
+        <input type="text" class="form-control" id="eventType" placeholder="Event type">
+    </div>
+
+    <div class="form-group">
+        <label for="event_name">Name</label>
+        <input type="text" class="form-control" id="eventName" placeholder="Name">
+    </div>
+    <div class="form-group">
+        <label for="event_start_date">Start Date</label>
+        <input type="text" class="form-control" id="eventStartDate" placeholder="Start Date">
+    </div>
+<label for="event_location">Location : </label>
+    <div class="form-group">
+        <label for="location_type"> Type </label>
+        <input type="text" class="form-control" id="locationType" placeholder="Location Type">
+    </div>
+
+    <div class="form-group">
+        <label for="location_name"> Name </label>
+        <input type="text" class="form-control" id="locationName" placeholder="Location Name">
+    </div> 
+    <div class="form-group">
+        <label for="location_address"> Address </label>
+        <input type="text" class="form-control" id="locationAddress" placeholder="Location Address">
+    </div>
+    <label for="offers"> Offers  : </label>
+
+    <div class="form-group">
+        <label for="offers_type"> Type </label>
+      <input type="text" class="form-control" id="offersType" placeholder="Offers Type">
+    </div>
+    <div class="form-group">
+        <label for="offers_name"> Name </label>
+        <input type="text" class="form-control" id="offersName" placeholder="Offers Name">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <% } %>
+    

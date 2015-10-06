@@ -1,4 +1,5 @@
-[
+{
+    "Events": [
     {
         "type": "MusicEvent",
         "name": "B.B. King",
@@ -14,11 +15,11 @@
         }
     },
     {
-        "type": "MusicEvent",
-        "name": "B.B. King",
+        "type": "DramaEvent",
+        "name": "Street Dance",
         "startDate": "2014-04-13T20:00",
         "location": {
-            "type": "Place",
+            "type": "Ravindra kala shetra",
             "name": "Lynn Auditorium",
             "address": "Lynn, MA, 01901"
         },
@@ -28,3 +29,4 @@
         }
     }
 ]
+}
