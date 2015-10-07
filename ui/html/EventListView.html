@@ -21,13 +21,14 @@
           <td><%= Events[i].location.type  %><%= Events[i].location.name %><%=  Events[i].location.address %></td>
           <td><%= Events[i].offers.type %> <%= Events[i].offers.url %></td>
           
-          <td><button id="delete_<%=i%>" type="button" class=" add btn btn-danger" >Delete</button></td>
+         <!-- <td><button id="delete_<%=i%>" type="button" class=" add btn btn-danger" >Delete</button></td>-->
         </tr>
         <% } %>
       </tbody>
 </table>
 
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEvent" >Add Event</button>
+<!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEvent" >Add Event</button>-->
+<button Type="button" VALUE="Back" id="back_button" class="btn btn btn-link"> Back </button>
 
 <div id="addEvent" class="modal fade" role="dialog">
   <div class="modal-dialog">

@@ -15,7 +15,7 @@ window.LoginView = Backbone.View.extend({
 	    	jQuery.each(users, function(i, user) {
 	    		if(username == user.name && pwd == user.password)
 					{
-						alert("You logged in as " + username + " and a password is " + pwd);
+						
 						$("#login_form").hide();
 						router = new Router();
 						router.navigate('userslist', {trigger: true})
@@ -39,7 +39,8 @@ window.LoginView = Backbone.View.extend({
 window.UserListView = Backbone.View.extend({
 	initialize : function() {		
 	},
-	events: { 
+	events: {
+		
 		"click #events-list" : "events_list"
 	},
 	events_list: function(){
@@ -62,6 +63,22 @@ window.EventListView = Backbone.View.extend({
 	initialize : function() {
 		var self = this;
 
+	},
+	events: {
+		"click #back_button" : "back_button",
+		
+	},
+
+	back_button: function(){
+		// history.go(-1);
+		eventlistview.remove();
+		router= new Router();
+		router.navigate("userslist",true);
+		window.location.reload();
+		// this.render();
+		// //$("#events_list_page").hide();
+
+	
 	},
 	render : function(){		
 		imagesdiv = "";
