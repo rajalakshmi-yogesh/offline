@@ -1,12 +1,12 @@
-#CACHE MANIFEST
+CACHE MANIFEST
 
-#index.html
-#ui/css/login.css
-#js/model/models.js
-#js/view/view.js
-#js/main.js
-#js/utils.js
+index.html
+ui/css/login.css
+js/model/models.js
+js/view/view.js
+js/main.js
+js/utils.js
 
 
-#NETWORK:
-#*
+NETWORK:
+*
