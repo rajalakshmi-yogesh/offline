@@ -28,65 +28,64 @@
 </table>
 
 <!--<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addEvent" >Add Event</button>-->
-<button Type="button" VALUE="Back" id="back_button" class="btn btn btn-link"> Back </button>
+<button Type="button" VALUE="Back" id="back_button_event" class="btn btn btn-link"> Back </button>
 
 <div id="addEvent" class="modal fade" role="dialog">
   <div class="modal-dialog">
   <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-      <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title"> Event </h4>
       </div>
       <div class="modal-body">
-  <form>
-    <div class="form-group">
-        <label for="event_type">Type</label>
-        <input type="text" class="form-control" id="eventType" placeholder="Event type">
-    </div>
+        <form>
+          <div class="form-group">
+              <label for="event_type">Type</label>
+              <input type="text" class="form-control" id="eventType" placeholder="Event type">
+          </div>
+          <div class="form-group">
+            <label for="event_name">Name</label>
+            <input type="text" class="form-control" id="eventName" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <label for="event_start_date">Start Date</label>
+            <input type="text" class="form-control" id="eventStartDate" placeholder="Start Date">
+          </div>
+          <label for="event_location">Location : </label>
+          <div class="form-group">
+          <label for="location_type"> Type </label>
+          <input type="text" class="form-control" id="locationType" placeholder="Location Type">
+          </div>
 
-    <div class="form-group">
-        <label for="event_name">Name</label>
-        <input type="text" class="form-control" id="eventName" placeholder="Name">
-    </div>
-    <div class="form-group">
-        <label for="event_start_date">Start Date</label>
-        <input type="text" class="form-control" id="eventStartDate" placeholder="Start Date">
-    </div>
-<label for="event_location">Location : </label>
-    <div class="form-group">
-        <label for="location_type"> Type </label>
-        <input type="text" class="form-control" id="locationType" placeholder="Location Type">
-    </div>
+          <div class="form-group">
+          <label for="location_name"> Name </label>
+          <input type="text" class="form-control" id="locationName" placeholder="Location Name">
+          </div> 
+          <div class="form-group">
+          <label for="location_address"> Address </label>
+          <input type="text" class="form-control" id="locationAddress" placeholder="Location Address">
+          </div>
+          <label for="offers"> Offers  : </label>
 
-    <div class="form-group">
-        <label for="location_name"> Name </label>
-        <input type="text" class="form-control" id="locationName" placeholder="Location Name">
-    </div> 
-    <div class="form-group">
-        <label for="location_address"> Address </label>
-        <input type="text" class="form-control" id="locationAddress" placeholder="Location Address">
-    </div>
-    <label for="offers"> Offers  : </label>
+          <div class="form-group">
+          <label for="offers_type"> Type </label>
+          <input type="text" class="form-control" id="offersType" placeholder="Offers Type">
+          </div>
+          <div class="form-group">
+          <label for="offers_name"> Name </label>
+          <input type="text" class="form-control" id="offersName" placeholder="Offers Name">
+          </div>
 
-    <div class="form-group">
-        <label for="offers_type"> Type </label>
-      <input type="text" class="form-control" id="offersType" placeholder="Offers Type">
-    </div>
-    <div class="form-group">
-        <label for="offers_name"> Name </label>
-        <input type="text" class="form-control" id="offersName" placeholder="Offers Name">
-    </div>
-
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div>
-  </div>
-</div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          </div>
+          <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+          </div>
+          </div>
+          </div>
 <% for (var i = 0, l = Events.length; i < l; i++) {%>
-    <% } %>
-    
+<% } %>
+

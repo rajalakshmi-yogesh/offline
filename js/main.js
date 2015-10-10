@@ -1,6 +1,7 @@
 Router = Backbone.Router.extend({
 	routes : {
 		"" : "login",
+		"home" : "home",
 		"userslist" : "userslist",
 		"event" : "event"
 		},
@@ -22,13 +23,30 @@ Router = Backbone.Router.extend({
 			}
 		})
 		},
+		home : function(name) {
+			users = new userDetails();
+			users.fetch({
+			success : function(model,response){
+					if (!this.homeview) {
+					this.homeview = new HomeView({
+						el : $("#home_page"),
+						collection : users							
+					});
+					this.homeview.render();
+				} else {
+					this.homeview.delegateEvents();
+				}
+			}
+
+		})
+		},
 		userslist : function(){
 			userdetails = new userDetails();
 			userdetails.fetch({
 			success : function(model,response){
 					if (!this.userlistview) {
 					this.userlistview = new UserListView({
-						el : $("#user_list"),
+						el : $("#user-list-view"),
 						collection : userdetails
 						
 					});
@@ -37,7 +55,9 @@ Router = Backbone.Router.extend({
 					this.userlistview.delegateEvents();
 				}
 			}
+
 		})
+		
 		},
 		event : function(){  
 			eventdetails = new eventsList();
@@ -45,7 +65,7 @@ Router = Backbone.Router.extend({
 			success : function(model,response){
 					if (!this.eventlistview) {
 					this.eventlistview = new EventListView({
-						el : $("#events_list_page"),
+						el : $("#event-list-view"),
 						collection : eventdetails
 						
 					});
@@ -58,7 +78,7 @@ Router = Backbone.Router.extend({
 		}
 	});
 
-templateLoader.load(["LoginView","UserListView","EventListView"], function() {
+templateLoader.load(["LoginView","UserListView","EventListView","HomeView"], function() {
 	app = new Router();
 	Backbone.history.start();
 });

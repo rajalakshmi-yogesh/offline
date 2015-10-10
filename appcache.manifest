@@ -1,12 +1,11 @@
 CACHE MANIFEST
 
-index.html
+# index.html
 ui/css/login.css
 js/model/models.js
 js/view/view.js
 js/main.js
 js/utils.js
-
 
 NETWORK:
 *

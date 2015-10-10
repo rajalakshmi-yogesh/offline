@@ -17,7 +17,7 @@
           <td><%= Users[i].name %></td>
           <td><%= Users[i].designation %></td>
           <td><%= Users[i].department %></td>
-          <td><%= Users[i].profilepic %></td>
+          <td ><a href="<%= Users[i].profilepic %>"><img class="thumbnail" src="<%= Users[i].profilepic %>" alt="<%= Users[i].profilepic %>" height="100" width="100"></a> </td>
           
  <!--         <td><button id="delete_<%=i%>" type="button" class=" add btn btn-danger" >Delete</button></td>-->
         </tr>
@@ -26,7 +26,8 @@
 </table>
 
 <!--<div class="container"><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#add_users" >Add Users</button>-->
- <button id="events-list" class="btn btn btn-link" type="submit">Events</button> </div>
+<!-- <button id="events-list" class="btn btn btn-link" type="submit">Events</button> </div>-->
+<button Type="button" VALUE="Back" id="back_button" class="btn btn btn-link"> Back </button>
 
 <div id="add_users" class="modal fade" role="dialog">
   <div class="modal-dialog">
@@ -66,3 +67,14 @@
 </div>
 
     
+<style type="text/css">
+  .thumbnail:hover {
+    position:relative;
+    top:-25px;
+    left:-35px;
+    width:500px;
+    height:auto;
+    display:block;
+    z-index:999;
+}
+</style>
