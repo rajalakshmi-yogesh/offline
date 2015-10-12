@@ -11,22 +11,26 @@ window.LoginView = Backbone.View.extend({
 		username = this.$('#username').val();
 		pwd = this.$('#password').val();
 		data.each(function(iModel, index, list) {
-			users  = iModel.toJSON().Users			
-	    	jQuery.each(users, function(i, user) {
-	    		if(username == user.name && pwd == user.password)
-					{
-						welcome_msg(user.name);
-					}
-				});
-	    	});
-	return false;
+			users  = iModel.toJSON().Users
+			jQuery.each(users, function(i, user) {
+				if(username == user.name && pwd == user.password)
+				{
+					loginview.remove();
+					loggedUser = new userDetail(user);
+					app = new Router();
+					app.navigate('home', {trigger: true})
+					return true;
+				}
+			});
+		});
+		return false;
 	},
 	render : function() {
 		imagesdiv = "";
 		data = this.collection;
 		currTemplate1 = this.template;
 		data.each(function(iModel, index, list) {
-		imagesdiv = imagesdiv + currTemplate1(iModel.toJSON());
+			imagesdiv = imagesdiv + currTemplate1(iModel.toJSON());
 		});
 		$(this.el).html(imagesdiv);
 	}

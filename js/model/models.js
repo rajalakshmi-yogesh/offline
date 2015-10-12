@@ -8,3 +8,5 @@ eventsList = Backbone.Collection.extend({
     model   :  eventList,
     url   : "data/events.json", 
    });
+
+loggedUser = new userDetail();

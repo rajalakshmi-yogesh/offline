@@ -1,8 +1,45 @@
-<h1>Welcome</h1>
-
-<%= name%>
-
+<nav class="navbar navbar-inverse" id="nav">
+	  	<div class="container-fluid">
+	    	<div class="navbar-header">
+	    		<a class="navbar-brand" href="#home">Home</a>
+	    	</div>
+		    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		        <ul class="nav navbar-nav navbar-right">
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= loggedUser.attributes.name%><span class="caret"></span></a>
+				        <ul class="dropdown-menu">
+				            <li><a href="#"><%= loggedUser.attributes.name%></a></li>
+				            <li><a href="#"><%= loggedUser.attributes.designation%></a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="#"><%= loggedUser.attributes.department%></a></li>
+				        </ul>
+			        </li>
+		      	</ul>
+		    </div><!-- /.navbar-collapse -->
+	  	</div><!-- /.container-fluid -->	
+	</nav>
+<h2> Welcome <%= loggedUser.attributes.name%>...!!! </h2>
+<img class="thumbnail" src="<%= loggedUser.attributes.profilepic %>" height="100" width="100">	
 <h3><button Type="button" VALUE="Back" id="user_list_btn" class="btn btn btn-link"> User List </button></h3>
 
 
 <h3><button Type="button" VALUE="Back" id="events_list" class="btn btn btn-link"> Events List </button></h3>
+<style type="text/css">body {
+background: rgba(212,228,239,1);
+background: -moz-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(212,228,239,1)), color-stop(100%, rgba(134,174,204,1)));
+background: -webkit-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+background: -o-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+background: -ms-linear-gradient(left, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+background: linear-gradient(to right, rgba(212,228,239,1) 0%, rgba(134,174,204,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d4e4ef', endColorstr='#86aecc', GradientType=1 );
+}
+#nav, #nav-inner, .nav-list, .nav-list-item a {
+background-color: #008B8B;
+color: #fffff0;
+}
+.navbar-brand a:hover {
+background: #333;
+color: #fff;
+}
+</style>
